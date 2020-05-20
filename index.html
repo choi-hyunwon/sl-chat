@@ -2,17 +2,187 @@
 
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>my-first-website</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SL cop. Chatbot</title>
+
+
+    <script src="js/chatbot/jquery/jquery-1.11.0.js"></script>
+    <script src="js/chatbot/jquery/jquery-ui.min.js"></script>
+    <script src="js/chatbot/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/chatbot/jsrender.js"></script>
+    <script src="js/chatbot/templateRenderer.js"></script>
+    <script src="js/chatbot/speech.js"></script>
+    <script src="js/chatbot/main.js"></script>
+    <script src="js/chatbot/search/akc_ksf.js"></script>
+    <script src="js/lib/goldenlayout.js"></script>
+    <script src="js/temp/dummy.js"></script>
+
+
+
+    <link rel="stylesheet" href="js/chatbot/jquery/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="js/chatbot/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/chatbot/style.css"/>
+    <link type="text/css" rel="stylesheet" href="css/lib/goldenlayout-base.css"/>
+    <link type="text/css" rel="stylesheet" href="css/lib/goldenlayout-soda-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="css/lib/layoutsystem.css"/>
+
+    <script type="text/javascript">
+        function init() {
+//	var domain = params.get("domain");
+            var domain = "SL";
+            var user = "admin";
+            var scenario = params.get("scenario");
+
+            if (domain == "" || user == "")
+                return false;
+
+            $("#chat-title").text(domain).next().text(user);
+
+            chat.init(domain, user, scenario);
+        }
+
+        $(document).ready(function () {
+            params.init();
+            init();
+            akcInit('1');		// 자동완성 세팅
+
+        });
+    </script>
 </head>
-
 <body>
+<div id="wrapper">
+    <div id="chatbot">
+        <div class="chat-container">
+            <div class="head">
+                <h1 class="h1"><a id="chat-title" class="modal-title ellipsis ellipsis-a"></a><span></span></h1>
+                <h3 style="float:right;">
+                    <i class="fas fa-question-circle" style="cursor: pointer; margin-right: 6px;" onclick="alert('도움말');"></i>
+                    <i class="fab fa-whmcs" style="cursor: pointer; margin-right: 6px;" onclick="alert('설정');"></i>
+                    <i class="fas fa-sign-out-alt" style="cursor: pointer; margin-right: 6px;" onclick="alert('나가기');"></i>
+                </h3>
+                <ul style="display:none;">
+                    <li><a class="ico-out" data-dismiss="modal" aria-label="Close"></a></li>
+                </ul>
+            </div>
+            <div class="chat-wrap">
+                <div class="chat" id="chat-history">
+                    <ul class="message">
+                        <li class="bot">
+                            <div class="avata"></div>
 
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" id="octocat" alt="octocat-gif" />
+                            <div class="name">SL검색봇</div>
+                            <div class="bubble">
+                                <div class="time">오후 4:53</div>
+                                <div class="body">
+                                    <div class="item active">
 
-<!-- Change this code here by copy and pasting your template on line 15 -->
-<p>Welcome to your first GitHub Pages website!</p>
+                                        <p><b>안녕하세요? SL 챗봇입니다.</b></p>
 
+
+                                        <p>'OOO에 대해 알려줘' 또는' OOO 찾아줘'
+                                            이렇게 질문해보세요</p>
+
+
+                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계 단계 ACTIVITY', 'd1', tempText1)">설계 단계 ACTIVITY</button>
+
+
+                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계표준', 'd2', tempText2)">설계표준</button>
+
+
+                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('LED 사양', 'd3', tempText3)">LED 사양</button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user">
+                            <div class="bubble">
+                                <div>설계 단계 ACTIVITY</div>
+                                <div class="time">오후 5:03</div>
+                            </div>
+                        </li>
+                        <li class="bot">
+                            <div class="avata"></div>
+
+                            <div class="name">SL검색봇</div>
+                            <div class="bubble">
+                                <div class="time">오후 5:03</div>
+                                <div class="body">
+                                    <div class="item active">
+
+                                        <p>activity 시나리오 진입</p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user">
+                            <div class="bubble">
+                                <div>안녕</div>
+                                <div class="time">오후 5:11</div>
+                            </div>
+                        </li>
+                        <li class="bot">
+                            <div class="avata"></div>
+
+                            <div class="name">SL검색봇</div>
+                            <div class="bubble">
+                                <div class="time">오후 5:11</div>
+                                <div class="body">
+                                    <div class="item active">
+
+                                        <p></p>
+                                        <p><span style="font-size: 18px;"><b>안녕</b>에 대한 검색 결과가 없습니다.</span></p>
+                                        <p></p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer in_header">
+                <div class="write-form">
+                    <a style="float:left; margin: 22px 0 0 22px; cursor: pointer;" onclick="alert('자주 사용하는 질문');">#</a>
+                    <textarea id="chat-textarea" rows="1" placeholder="메세지를 입력해 주세요." autocomplete="off"></textarea>
+                    <a href="#none" id="top_arrow" class="auto_arr">자동완성 펼치기</a>
+                    <span class="send" id="chat-send"><span></span></span>
+                </div>
+                <!-- AKC Keyword : Start -->
+                <div class="keyword" id="topKeywordLst">
+                    <ul id="ack1">
+                        <li><a href="#none">검색어 자동완성을 사용중입니다.</a></li>
+                    </ul>
+                    <ul id="ack2">
+                    </ul>
+                    <ul id="ack3">
+                    </ul>
+                    <!-- choose_word -->
+                    <div class="choose_word">
+                        <div class="fl">
+                            <a href="#none" id="first_opt_top">첫단어 보기</a> | <a id="last_opt_top" href="#none">끝단어 보기</a>
+                        </div>
+                        <a href="#none" id="akc_able" class="fr bt_autokey_cl">끄기</a>
+                    </div>
+                    <!-- //choose_word -->
+                </div>
+                <!-- AKC Keyword : End -->
+            </div>
+        </div>
+    </div>
+    <div id="layoutContainer"></div>
+</div>
+<script src="js/lib/layoutsystem.js"></script>
+<script>
+    $(function () {
+        myLayout.init();
+    })
+</script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+h2 {
+    font: 14px Arial, sans-serif;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+html, body {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#wrapper {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#chatbot {
+    width: 600px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #222;
+}
+
+#layoutContainer {
+    width: calc(100% - 600px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 600px;
+    box-shadow: -3px 0px 9px 0px rgba(0, 0, 0, 0.4);
+}
+
+.chat-container {
+    width: 100%;
+    height: calc(100% - 140px);
+}
