@@ -1,0 +1,113 @@
+
+
+html, body {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#wrapper {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#chatbot {
+    width: 580px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #222;
+}
+#toggler {
+    position: absolute;
+    left: 580px;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background-color: #009fe3;
+    z-index: 100;
+}
+#toggler .btn_collapse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 38px;
+    height: 38px;
+    background-color: #ffffff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 10px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.16);
+}
+#toggler .btn_collapse i{
+    font-size: 20px;
+    color: #62b5fd;
+}
+
+#system_layout {
+    width: calc(100% - 600px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 600px;
+    box-shadow: -3px 0px 9px 0px rgba(0, 0, 0, 0.4);
+}
+#header_system {
+    height: 70px;
+    background-color: #067cbf;
+}
+#header_system .util {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 30px;
+}
+#header_system .util a {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: 15px;
+}
+#header_system .util a.btn_col {
+    background-image: url(../../images/ico_col_normal.png);
+}
+#header_system .util a.btn_row {
+    background-image: url(../../images/ico_row_normal.png);
+}
+#header_system .util a.btn_grid {
+    background-image: url(../../images/ico_tile_normal.png);
+}
+
+#header_system .util a.btn_col.active {
+    background-image: url(../../images/ico_col_active.png);
+}
+#header_system .util a.btn_row.active {
+    background-image: url(../../images/ico_row_active.png);
+}
+#header_system .util a.btn_grid.active {
+    background-image: url(../../images/ico_tile_active.png);
+}
+
+
+#container_system {
+    height: calc(100% - 70px);
+}
+
+.chat-container {
+    width: 100%;
+    height: calc(100% - 140px);
+}
+
+/**
+    slchat style
+ */
