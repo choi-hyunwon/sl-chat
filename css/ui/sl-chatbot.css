@@ -100,7 +100,7 @@ html, body {
 
 
 #container_system {
-    height: 100%;
+    height: calc(100% - 70px);
 }
 
 .chat-container {
