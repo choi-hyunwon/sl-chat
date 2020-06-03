@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SL cop. Chatbot</title>
-
 
     <script src="js/chatbot/jquery/jquery-1.11.0.js"></script>
     <script src="js/chatbot/jquery/jquery-ui.min.js"></script>
@@ -19,35 +17,28 @@
     <script src="js/lib/goldenlayout.js"></script>
     <script src="js/temp/dummy.js"></script>
 
-
-
     <link rel="stylesheet" href="js/chatbot/jquery/jquery-ui.min.css"/>
     <link rel="stylesheet" href="js/chatbot/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/chatbot/style.css"/>
-    <link type="text/css" rel="stylesheet" href="css/lib/goldenlayout-base.css"/>
-    <link type="text/css" rel="stylesheet" href="css/lib/goldenlayout-soda-theme.css"/>
-    <link type="text/css" rel="stylesheet" href="css/lib/layoutsystem.css"/>
+    <link rel="stylesheet" href="css/lib/font-awesome.css"/>
+    <link rel="stylesheet" href="css/lib/layout-base.css"/>
+    <link rel="stylesheet" href="css/ui/sl-chatbot.css"/>
 
     <script type="text/javascript">
         function init() {
 //	var domain = params.get("domain");
             var domain = "SL";
-            var user = "admin";
+            var user = "전장설계 Chatbot";
             var scenario = params.get("scenario");
-
             if (domain == "" || user == "")
                 return false;
-
             $("#chat-title").text(domain).next().text(user);
-
             chat.init(domain, user, scenario);
         }
-
         $(document).ready(function () {
             params.init();
             init();
             akcInit('1');		// 자동완성 세팅
-
         });
     </script>
 </head>
@@ -59,46 +50,27 @@
                 <h1 class="h1"><a id="chat-title" class="modal-title ellipsis ellipsis-a"></a><span></span></h1>
                 <h3 style="float:right;">
                     <i class="fas fa-question-circle" style="cursor: pointer; margin-right: 6px;" onclick="alert('도움말');"></i>
-                    <i class="fab fa-whmcs" style="cursor: pointer; margin-right: 6px;" onclick="alert('설정');"></i>
-                    <i class="fas fa-sign-out-alt" style="cursor: pointer; margin-right: 6px;" onclick="alert('나가기');"></i>
+                    <i class="fas fa-cog" style="cursor: pointer; margin-right: 6px;" onclick="alert('설정');"></i>
                 </h3>
-                <ul style="display:none;">
-                    <li><a class="ico-out" data-dismiss="modal" aria-label="Close"></a></li>
-                </ul>
             </div>
             <div class="chat-wrap">
                 <div class="chat" id="chat-history">
                     <ul class="message">
                         <li class="bot">
                             <div class="avata"></div>
-
                             <div class="name">SL검색봇</div>
                             <div class="bubble">
                                 <div class="time">오후 4:53</div>
                                 <div class="body">
                                     <div class="item active">
-
                                         <p><b>안녕하세요? SL 챗봇입니다.</b></p>
-
-
-                                        <p>'OOO에 대해 알려줘' 또는' OOO 찾아줘'
-                                            이렇게 질문해보세요</p>
-
-
-                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계 단계 ACTIVITY', 'd1', tempText1)">설계 단계 ACTIVITY</button>
-
-
-                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계표준', 'd2', tempText2)">설계표준</button>
-
-
-                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('LED 사양', 'd3', tempText3)">LED 사양</button>
-
-
+                                        <p>'OOO에 대해 알려줘' 또는' OOO 찾아줘' 이렇게 질문해보세요</p>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li class="user">
+                            <div class="avata"></div>
                             <div class="bubble">
                                 <div>설계 단계 ACTIVITY</div>
                                 <div class="time">오후 5:03</div>
@@ -106,21 +78,21 @@
                         </li>
                         <li class="bot">
                             <div class="avata"></div>
-
                             <div class="name">SL검색봇</div>
                             <div class="bubble">
                                 <div class="time">오후 5:03</div>
                                 <div class="body">
                                     <div class="item active">
-
                                         <p>activity 시나리오 진입</p>
-
-
+                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계 단계 ACTIVITY', 'd1', tempText1)">설계 단계 ACTIVITY</button>
+                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계표준', 'd2', tempText2)">설계표준</button>
+                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('LED 사양', 'd3', tempText3)">LED 사양</button>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li class="user">
+                            <div class="avata"></div>
                             <div class="bubble">
                                 <div>안녕</div>
                                 <div class="time">오후 5:11</div>
@@ -128,18 +100,14 @@
                         </li>
                         <li class="bot">
                             <div class="avata"></div>
-
                             <div class="name">SL검색봇</div>
                             <div class="bubble">
                                 <div class="time">오후 5:11</div>
                                 <div class="body">
                                     <div class="item active">
-
                                         <p></p>
                                         <p><span style="font-size: 18px;"><b>안녕</b>에 대한 검색 결과가 없습니다.</span></p>
                                         <p></p>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -149,10 +117,12 @@
             </div>
             <div class="footer in_header">
                 <div class="write-form">
-                    <a style="float:left; margin: 22px 0 0 22px; cursor: pointer;" onclick="alert('자주 사용하는 질문');">#</a>
+                    <a href="#" id="favor_word" onclick="alert('자주 사용하는 질문');">
+                        <em class="fal fa-hashtag "></em>
+                    </a>
                     <textarea id="chat-textarea" rows="1" placeholder="메세지를 입력해 주세요." autocomplete="off"></textarea>
                     <a href="#none" id="top_arrow" class="auto_arr">자동완성 펼치기</a>
-                    <span class="send" id="chat-send"><span></span></span>
+                    <span class="send" id="chat-send"><em class="fas fa-paper-plane"></em></span>
                 </div>
                 <!-- AKC Keyword : Start -->
                 <div class="keyword" id="topKeywordLst">
@@ -176,7 +146,21 @@
             </div>
         </div>
     </div>
-    <div id="layoutContainer"></div>
+    <div id="toggler" class="toggler">
+        <a href="#" class="btn_collapse">
+            <i class="far fa-chevron-left"></i>
+        </a>
+    </div>
+    <div id="system_layout">
+        <div id="header_system">
+            <div class="util">
+                <a href="#" class="btn_col active"></a>
+                <a href="#" class="btn_row"></a>
+                <a href="#" class="btn_grid"></a>
+            </div>
+        </div>
+        <div id="container_system"></div>
+    </div>
 </div>
 <script src="js/lib/layoutsystem.js"></script>
 <script>

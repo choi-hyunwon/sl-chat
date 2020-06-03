@@ -441,11 +441,11 @@
         }
     });
     /**
-     * The main class that will be exposed as GoldenLayout.
+     * The main class that will be exposed as layout.
      *
      * @public
      * @constructor
-     * @param {GoldenLayout config} config
+     * @param {layout config} config
      * @param {[DOM element container]} container Can be a jQuery selector string or a Dom element. Defaults to body
      *
      * @returns {VOID}
@@ -453,8 +453,8 @@
     lm.LayoutManager = function (config, container) {
 
         if (!$ || typeof $.noConflict !== 'function') {
-            var errorMsg = 'jQuery is missing as dependency for GoldenLayout. ';
-            errorMsg += 'Please either expose $ on GoldenLayout\'s scope (e.g. window) or add "jquery" to ';
+            var errorMsg = 'jQuery is missing as dependency for layout. ';
+            errorMsg += 'Please either expose $ on layout\'s scope (e.g. window) or add "jquery" to ';
             errorMsg += 'your paths when using RequireJS/AMD';
             throw new Error(errorMsg);
         }
@@ -506,13 +506,13 @@
     lm.LayoutManager.__lm = lm;
 
     /**
-     * Takes a GoldenLayout configuration object and
+     * Takes a layout configuration object and
      * replaces its keys and values recursively with
      * one letter codes
      *
      * @static
      * @public
-     * @param   {Object} config A GoldenLayout config object
+     * @param   {Object} config A layout config object
      *
      * @returns {Object} minified config
      */
@@ -569,7 +569,7 @@
          * Creates a layout configuration object based on the the current state
          *
          * @public
-         * @returns {Object} GoldenLayout configuration
+         * @returns {Object} layout configuration
          */
         toConfig: function (root) {
             var config, next, i;
@@ -688,7 +688,7 @@
             /**
              * If this is a subwindow, wait a few milliseconds for the original
              * page's js calls to be executed, then replace the bodies content
-             * with GoldenLayout
+             * with layout
              */
             if (this.isSubWindow === true && this._creationTimeoutPassed === false) {
                 setTimeout(lm.utils.fnBind(this.init, this), 7);
@@ -1013,7 +1013,7 @@
          * (as is the case with codepens) the parent window is forbidden from calling certain
          * methods on the child, such as window.close() or setting document.location.href.
          *
-         * This prevented GoldenLayout popouts from popping in in codepens. The fix is to call
+         * This prevented layout popouts from popping in in codepens. The fix is to call
          * _$closeWindow on the child window's gl instance which (after a timeout to disconnect
          * the invoking method from the close call) closes itself.
          *
@@ -1262,7 +1262,7 @@
         },
 
         /**
-         * This is executed when GoldenLayout detects that it is run
+         * This is executed when layout detects that it is run
          * within a previously opened popout window.
          *
          * @private
@@ -1334,11 +1334,11 @@
             var container = $(this.container || 'body');
 
             if (container.length === 0) {
-                throw new Error('GoldenLayout container not found');
+                throw new Error('layout container not found');
             }
 
             if (container.length > 1) {
-                throw new Error('GoldenLayout more than one container element specified');
+                throw new Error('layout more than one container element specified');
             }
 
             if (container[0] === document.body) {
@@ -1358,7 +1358,7 @@
         /**
          * Kicks of the initial, recursive creation chain
          *
-         * @param   {Object} config GoldenLayout Config
+         * @param   {Object} config layout Config
          *
          * @returns {void}
          */
@@ -1767,10 +1767,10 @@
      *    - Creating a new configuration with the content item as root element
      *    - Serializing and minifying the configuration
      *    - Opening the current window's URL with the configuration as a GET parameter
-     *    - GoldenLayout when opened in the new window will look for the GET parameter
+     *    - layout when opened in the new window will look for the GET parameter
      *      and use it instead of the provided configuration
      *
-     * @param {Object} config GoldenLayout item config
+     * @param {Object} config layout item config
      * @param {Object} dimensions A map with width, height, top and left
      * @param {String} parentId The id of the element the item will be appended to on popIn
      * @param {Number} indexInParent The position of this element within its parent
@@ -1885,7 +1885,7 @@
                 /**
                  * Bogus title to prevent re-usage of existing window with the
                  * same title. The actual title will be set by the new window's
-                 * GoldenLayout instance if it detects that it is in subWindowMode
+                 * layout instance if it detects that it is in subWindowMode
                  */
                 title = Math.floor(Math.random() * 1000000).toString(36),
 
@@ -1923,7 +1923,7 @@
                 .on('unload beforeunload', lm.utils.fnBind(this._onClose, this));
 
             /**
-             * Polling the childwindow to find out if GoldenLayout has been initialised
+             * Polling the childwindow to find out if layout has been initialised
              * doesn't seem optimal, but the alternatives - adding a callback to the parent
              * window or raising an event on the window object - both would introduce knowledge
              * about the parent to the child window which we'd rather avoid
@@ -1998,7 +1998,7 @@
         },
 
         /**
-         * Callback when the new window is opened and the GoldenLayout instance
+         * Callback when the new window is opened and the layout instance
          * within it is initialised
          *
          * @returns {void}
@@ -4960,11 +4960,11 @@
     lm.utils.copy(lm.utils.ConfigMinifier.prototype, {
 
         /**
-         * Takes a GoldenLayout configuration object and
+         * Takes a layout configuration object and
          * replaces its keys and values recursively with
          * one letter counterparts
          *
-         * @param   {Object} config A GoldenLayout config object
+         * @param   {Object} config A layout config object
          *
          * @returns {Object} minified config
          */
@@ -5228,7 +5228,7 @@
         $(window).off('gl_child_event', this._boundOnEventFromChild);
     };
     /**
-     * A specialised GoldenLayout component that binds GoldenLayout container
+     * A specialised layout component that binds layout container
      * lifecycle events to react components
      *
      * @constructor
@@ -5281,7 +5281,7 @@
 
         /**
          * Hooks into React's state management and applies the componentstate
-         * to GoldenLayout
+         * to layout
          *
          * @private
          * @returns {void}
@@ -5292,7 +5292,7 @@
         },
 
         /**
-         * Retrieves the react class from GoldenLayout's registry
+         * Retrieves the react class from layout's registry
          *
          * @private
          * @returns {React.Class}
@@ -5309,7 +5309,7 @@
 
             if (!reactClass) {
                 throw new Error('React component "' + componentName + '" not found. ' +
-                    'Please register all components with GoldenLayout using `registerComponent(name, component)`');
+                    'Please register all components with layout using `registerComponent(name, component)`');
             }
 
             return reactClass;

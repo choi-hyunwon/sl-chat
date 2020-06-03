@@ -6,7 +6,7 @@ var config = {
         ]
     }]
 };
-var myLayout = new window.GoldenLayout(config, $('#layoutContainer'));
+var myLayout = new window.GoldenLayout(config, $('#container_system'));
 
 myLayout.registerComponent('sl-chat', function (container, state) {
     container.getElement().html('<h2>sl-chat</h2>');
