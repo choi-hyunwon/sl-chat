@@ -9,13 +9,13 @@
     <script src="js/chatbot/jquery/jquery-1.11.0.js"></script>
     <script src="js/chatbot/jquery/jquery-ui.min.js"></script>
     <script src="js/chatbot/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/chatbot/jsrender.js"></script>
-    <script src="js/chatbot/templateRenderer.js"></script>
-    <script src="js/chatbot/speech.js"></script>
-    <script src="js/chatbot/main.js"></script>
+    <!--    <script src="js/chatbot/jsrender.js"></script>-->
+    <!--    <script src="js/chatbot/templateRenderer.js"></script>-->
+    <!--    <script src="js/chatbot/speech.js"></script>-->
+    <!--    <script src="js/chatbot/main.js"></script>-->
     <script src="js/chatbot/search/akc_ksf.js"></script>
     <script src="js/layout/lib.min.js"></script>
-    <script src="js/temp/dummy.js"></script>
+    <script src="js/ui/ui.common.js"></script>
 
     <link rel="stylesheet" href="css/text/common.css"/>
     <link rel="stylesheet" href="js/chatbot/jquery/jquery-ui.min.css"/>
@@ -30,7 +30,7 @@
 
     <script type="text/javascript">
         function init() {
-//	var domain = params.get("domain");
+            var domain = params.get("domain");
             var domain = "SL";
             var user = "전장설계 Chatbot";
             var scenario = params.get("scenario");
@@ -40,9 +40,9 @@
             chat.init(domain, user, scenario);
         }
         $(document).ready(function () {
-            params.init();
-            init();
-            akcInit('1');		// 자동완성 세팅
+            // params.init();
+            // init();
+             akcInit('1');		// 자동완성 세팅
         });
     </script>
 </head>
@@ -51,15 +51,16 @@
     <div id="chatbot">
         <div class="chat-container">
             <div class="head">
-                <h1 class="h1"><a id="chat-title" class="modal-title ellipsis ellipsis-a"></a><span></span></h1>
+                <h1 class="h1"><a id="chat-title" class="modal-title ellipsis ellipsis-a">SL</a><span>전장설계 Chatbot</span></h1>
                 <h3 style="float:right;">
-                    <i class="fas fa-question-circle" style="cursor: pointer; margin-right: 6px;" onclick="alert('도움말');"></i>
+                    <i class="fas fa-question-circle" style="cursor: pointer; margin-right: 10px;" onclick="alert('도움말');"></i>
                     <i class="fas fa-cog" style="cursor: pointer; margin-right: 6px;" onclick="alert('설정');"></i>
                 </h3>
             </div>
             <div class="chat-wrap">
                 <div class="chat" id="chat-history">
                     <ul class="message">
+
                         <li class="bot">
                             <div class="avata"></div>
                             <div class="name">SL검색봇</div>
@@ -73,6 +74,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="user">
                             <div class="avata"></div>
                             <div class="bubble">
@@ -88,13 +90,139 @@
                                 <div class="body">
                                     <div class="item active">
                                         <p>activity 시나리오 진입</p>
-                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계 단계 ACTIVITY', 'd1')">설계 단계 ACTIVITY</button>
-                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계표준', 'd2')">설계표준</button>
-                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('LED 사양', 'd1')">LED 사양</button>
+                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계 단계 ACTIVITY', 'iframe')">설계 단계 ACTIVITY</button>
+                                        <button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계표준', 'ajax')">설계표준</button>
                                     </div>
                                 </div>
                             </div>
                         </li>
+
+                        <li class="user">
+                            <div class="avata"></div>
+                            <div class="bubble">
+                                <div>STMD때 어떤 업무 해야외죠?</div>
+                                <div class="time">오후 5:11</div>
+                            </div>
+                        </li>
+                        <li class="bot">
+                            <div class="avata"></div>
+                            <div class="name">SL검색봇</div>
+                            <div class="bubble">
+                                <div class="time">오후 5:03</div>
+                                <div class="body">
+                                    <div class="item">
+                                        <p>STMD 업무 단계가 여러가 있습니다.</p>
+                                        <div class="step">
+                                            <ul>
+                                                <li><button href="#" class="btn"> 1단계 : STMD</button></li>
+                                                <li><a href="#" class="btn"> 2단계 : STMD 스킨 점검</a></li>
+                                                <li class="selected"><a href="#" class="btn"> 3단계 : STMD 스킨 보완</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="bot">
+                            <div class="avata"></div>
+                            <div class="name">SL검색봇</div>
+                            <div class="bubble">
+                                <div class="time">오후 5:03</div>
+                                <div class="body">
+                                    <div class="item active">
+                                        <p>STMD는 SINGLE THEME MATH DATA의 약자로 여러 개이던 램프 디자인이 하나로 결정되는 시점이며 GVDP 5.4 기준으로 STMD 스킨으로 LIT M/UP 데이터를 제작해야 합니다. 최근 차종 STMD 시점의 업무 파일 보여드립니다.</p>
+                                        <div class="file">
+                                            <ul>
+                                                <li>STMD 스킨 점검 SHEET <a href="#" class="btn-file">파일 보기</a></li>
+                                                <li>LIT M/UP 제작 스케줄 <a href="#" class="btn-file">파일 보기</a></li>
+                                                <li>ESO 해석 일정 <a href="#" class="btn-file">파일 보기</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="util">
+                                <a href="#" class="btn btn-outline-white">처음으로</a>
+                                <a href="#" class="btn btn-primary">이전 업무</a>
+                                <a href="#" class="btn btn-primary">차순위 업무</a>
+                                <a href="#" class="btn btn-outline-white">나가기</a>
+                            </div>
+                            <div class="util util-3">
+                                <a href="#" class="btn btn-outline-white">처음으로</a>
+                                <a href="#" class="btn btn-primary">결과 내 재검색</a>
+                                <a href="#" class="btn btn-outline-white">나가기</a>
+                            </div>
+
+
+                        </li>
+
+                        <li class="user">
+                            <div class="avata"></div>
+                            <div class="bubble">
+                                <div>R/C 아웃렌즈 재질은 주로 뭘 쓰나요?</div>
+                                <div class="time">오후 5:11</div>
+                            </div>
+                        </li>
+                        <li class="bot">
+                            <div class="avata"></div>
+                            <div class="name">SL검색봇</div>
+                            <div class="bubble">
+                                <div class="time">오후 5:03</div>
+                                <div class="body">
+                                    <div class="item active">
+                                        <p>‘R/C 아웃렌즈 재질은 주로 뭘 쓰나요?’ 질문에 대한 답변 입니다.</p>
+                                        <button type="button" class="btn-link btn-inline ellipsis">설계 표준(5)</button>
+                                        <button type="button" class="btn-link btn-inline ellipsis">DFMEA Master (25)</button>
+                                        <button type="button" class="btn-link btn-inline ellipsis">PTS (3)</button>
+                                        <button type="button" class="btn-link btn-inline ellipsis">재료규격 (8)</button>
+                                        <button type="button" class="btn-link btn-inline ellipsis">표준부품 (1)</button>
+                                        <div class="list">
+                                            <p>설계표준</p>
+                                            <ul>
+                                                <li>아웃렌즈설계표준 (SLES-A-AB-3001)</li>
+                                                <li>아웃렌즈설계표준 (SLES-A-AB-3001)</li>
+                                                <li>아웃렌즈설계표준 (SLES-A-AB-3001)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list">
+                                            <p>DFMEA Master</p>
+                                            <ul>
+                                                <li>DFMEA 마스터 (123456)</li>
+                                                <li>DFMEA 마스터 (123456)</li>
+                                                <li>DFMEA 마스터 (123456)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list">
+                                            <p>PTS</p>
+                                            <ul>
+                                                <li>과거차 문제점 (2000.01.30)</li>
+                                                <li>과거차 문제점 (2000.01.30)</li>
+                                                <li>과거차 문제점 (2000.01.30)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list" style="display: none;">
+                                            <p>재료규격</p>
+                                            <ul>
+                                                <li>재료규격 목록 (2000.01.30)</li>
+                                                <li>재료규격 목록 (2000.01.30)</li>
+                                                <li>재료규격 목록 (2000.01.30)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list" style="display: none;">
+                                            <p>표준부품</p>
+                                            <ul>
+                                                <li>표준부품 목록 (2000.01.30)</li>
+                                                <li>표준부품 목록 (2000.01.30)</li>
+                                                <li>표준부품 목록 (2000.01.30)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-collapse _collapse"><i class="fal fa-chevron-down"></i></a>
+                            </div>
+                        </li>
+
                         <li class="user">
                             <div class="avata"></div>
                             <div class="bubble">
@@ -116,6 +244,7 @@
                                 </div>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -129,14 +258,26 @@
                     <span class="send" id="chat-send"><em class="fas fa-paper-plane"></em></span>
                 </div>
                 <!-- AKC Keyword : Start -->
-                <div class="keyword" id="topKeywordLst">
+                <div class="keyword" id="topKeywordLst" style="display:block;">
                     <ul id="ack1">
-                        <li><a href="#none">검색어 자동완성을 사용중입니다.</a></li>
+                        <li><a href="#none"><strong>R/C</strong>검색어 자동완성을 사용중입니다.</a></li>
                     </ul>
                     <ul id="ack2">
+                        <li><a href="#none"><strong>R/C</strong>아웃렌즈 재질은 주로 뭘 쓰나요? </a></li>
                     </ul>
                     <ul id="ack3">
+                        <li><a href="#none"><strong>R/C</strong>아웃렌즈 재질은 주로 뭘 쓰나요? </a></li>
                     </ul>
+
+                    <ul class="recommend">
+                        <li><a href="#none"><strong>R/C</strong>추천 메뉴</a></li>
+                    </ul>
+
+                    <div class="btn-wrap">
+                    <button type="button" class="btn-link btn-inline ellipsis">설계 표준(5)</button>
+                    <button type="button" class="btn-link btn-inline ellipsis">DFMEA Master (25)</button>
+                    <button type="button" class="btn-link btn-inline ellipsis">PTS (3)</button>
+                    </div>
                     <!-- choose_word -->
                     <div class="choose_word">
                         <div class="fl">
@@ -157,6 +298,7 @@
     </div>
     <div id="system_layout">
         <div id="header_system">
+            <h1 class="h1" style="display: none;"><span>SL 전장설계 Chatbot</span></h1>
             <div class="util">
                 <a href="#" class="btn_row active"></a>
                 <a href="#" class="btn_col"></a>
@@ -166,27 +308,24 @@
         <div id="container_system"></div>
     </div>
 </div>
+
 <script src="js/layout/layoutsystem.js"></script>
 <script>
     $(function () {
         myLayout.init();
-        $('.btn_collapse').on('click', function () {
-            if ($(this).hasClass('collapsed')){
-                $('#chatbot').show();
-                $(this).removeClass('collapsed');
-                $('#toggler').css({'left': '600'});
-                $('#system_layout').css({'width': 'calc(100% - 600px)', 'left':'600px'});
-                myLayout.updateSize($(window).width()-600, $(window).height());
-                $(this).css('transform','translateX(-50%) translateY(-50%) rotate(0deg)')
-            } else {
-                $('#chatbot').hide();
-                $(this).addClass('collapsed');
-                $('#toggler').css({'left': '0'});
-                $('#system_layout').css({'width': '100%', 'left':'20px'});
-                myLayout.updateSize($(window).width()-20, $(window).height());
-                $(this).css('transform','translateX(-50%) translateY(-50%) rotate(180deg)')
-            }
+
+        myLayout.registerComponent('iframe', function (container, state) {
+            container.getElement().html('<iframe src="demo/legacy/search/AType_01.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>');
+        });
+
+        $.get('demo/legacy/search/AType_01_body.html', function (data, status) {
+            myLayout.registerComponent('ajax', function (container, state) {
+                container.getElement().html(data);
+            });
         })
+
+
+
     })
 </script>
 </body>

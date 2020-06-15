@@ -348,7 +348,7 @@
 
 .lm_header {
     height: 20px;
-    background-color: #005f95;
+    background-color: #2bb0d4;
 }
 
 .lm_header.lm_selectable {
@@ -436,13 +436,12 @@
 .lm_controls .lm_close {
     background-image: url("../../images/ico_pannel_close.png")
 }
-
 .lm_maximised .lm_header {
-    background-color: #005f95;
+    background-color: #2bb0d4;
 }
 
 .lm_maximised .lm_controls .lm_maximise {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAJklEQVR4nGP8//8/AyHARFDFUFbEwsDAwMDIyIgzHP7//89IlEkApSkHEScJTKoAAAAASUVORK5CYII=)
+    background-image: url("../../images/icon_pannel_small.png")
 }
 
 .lm_transition_indicator {

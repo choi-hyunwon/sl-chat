@@ -15,7 +15,7 @@ html, body {
 -------------------------------------------*/
 .chat-container .head {
     background-color: #151c5a;
-    background-image: linear-gradient(to right, #151c5a, #019ade 82%, #00a1e5);
+    background-image: linear-gradient(to right, #00a1e5, #065590 69%, #003777);
     height: 70px;
     position: relative;
 }
@@ -80,17 +80,18 @@ a:focus {
 }
 
 h1.h1 {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 300;
     color: #fff;
     line-height: 70px;
     margin: 0 20px;
     float: left;
     display: inline-block;
+    letter-spacing: -1.2px;
 }
 
 h1.h1 a {
-    font-size: 18px !important;
+    font-size: 24px !important;
     font-weight: 300 !important;
     margin-top: 0;
     display: inline;
@@ -107,14 +108,16 @@ h1.h1 a {
 /*.head > ul > li > a.ico-out {background: url(img/ico-out.png) no-repeat 0 0; width:19px; height:26px;}*/
 
 h1.h1 span {
-    color: #deedf9;
+    color: #ffffff;
     cursor: pointer;
 }
 
+/*
 h1.h1 span::before {
     content: " | ";
-    color: #aa9d8f;
+    color: #ffffff;
 }
+*/
 
 ul.bots {
     position: absolute;
@@ -279,7 +282,6 @@ ul.bots li a span.movie {
 }
 
 .message {
-    padding: 0px 15px 0px 15px;
     list-style: none;
 }
 
@@ -300,11 +302,11 @@ ul.bots li a span.movie {
 .message li .bubble {
     clear: both;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     padding: 7px 20px;
     position: relative;
-    max-width: 330px;
+    max-width: 440px;
     line-height: 1.4;
     word-wrap: break-word;
 }
@@ -335,8 +337,8 @@ ul.bots li a span.movie {
 
 .message li.bot .bubble {
     margin: 0 0 20px 49px;
-    border: solid 1px #c9e9f4;
-    background-color: #f1fcff;
+    border: solid 1px #c7e8d6;
+    background-color: #f6fffa;
     float: left;
     position: relative;
     border-top-left-radius: 0;
@@ -352,6 +354,46 @@ ul.bots li a span.movie {
     z-index: 10;
 }
 .message li.bot .bubble ul { padding: 0px; }
+
+
+.message li.bot .util {
+    float: left;
+    margin: 0 0 20px 49px;
+    width: 440px;
+    height: 50px;
+    box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.16);
+    border: solid 2px #2bb0d4;
+    background-color: #ffffff;
+    text-align: center;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    padding: 8px 0;
+}
+.message li.bot .util .btn {
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    line-height: 16px;
+}
+.message li.bot .util .btn-outline-white {
+    background-color: #fff;
+    border: 1px solid #999999;
+
+}
+.message li.bot .util .btn-primary {
+    background-color: #2bb0d4;
+    color: #ffffff;
+    border: none;
+}
+.message li.bot .util.util-3 .btn {
+    width: 133px;
+}
+
+
+
+
+
 
 .message li.bot .avata {
     width: 40px;
@@ -404,13 +446,13 @@ ul.bots li a span.movie {
 }
 
 .message li.user .bubble {
-    border: solid 2px #4bc1e1;
+    border: solid 2px #c9e9f4;
     float: right;
     margin-right: 50px;
     margin-bottom: 20px;
     border-top-right-radius: 0;
     color: #333333;
-    background-color: #fff;
+    background-color: #e6f9ff;
 }
 
 .message li.user .bubble .b-tail {
@@ -629,17 +671,94 @@ ul.bots li a span.movie {
 .fl {float:left;}
 .fr {float:right;}
 
-.keyword {border:1px solid #848587; border-top:none; background:#fff; z-index:100; padding:4px 0 0 0;  font-family:"돋움",dotum; color:#cecece; display:none; position:absolute;bottom:70px;width:100%;}
-.keyword li a{display:block; height:23px; padding:0 0 0 9px; font-size:12px; color:#a1a2a5; line-height:23px;}
-.keyword li a:hover {background:#eff6fa; text-decoration:none;}
-.keyword li a.selected {background:#eff6fa; text-decoration:none;}
-.keyword li a strong{color:#ff1400;}
-.choose_word {height:26px; margin-top:2px; padding:9px 0 0 0; background:#f4f4f4; font-size:11px; border-top:1px solid #d7d7d7;}
-.choose_word a {color:#959595; *display:inline-block;}
-:root .choose_word a {display:inline-block;}
-.choose_word a.selected, .choose_word a:hover {color:#666666; text-decoration:underline;}
-.choose_word .fl {margin-left:9px;}
-.choose_word .fr {margin-right:8px;}
+.keyword {
+    border: solid 2px #2bb0d4;
+    background-color: #ffffff;
+    z-index: 100;
+    color: #cecece;
+    display: none;
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+    padding: 7px 0;
+}
+.keyword ul {
+    margin-bottom: 0;
+}
+.keyword li a {
+    display: block;
+    padding: 0 40px;
+    font-size: 14px;
+    color: #333;
+    line-height: 30px;
+}
+
+
+.keyword li a:hover {
+    background: #e6f9ff;
+    text-decoration: none;
+}
+
+.keyword li a.selected {
+    background: #eff6fa;
+    text-decoration: none;
+}
+
+.keyword li a strong {
+    color: #2bb0d4;
+    margin-right: 5px;
+}
+
+.keyword .btn-wrap {
+    padding: 0 40px;
+    margin-bottom: 20px;
+}
+.keyword .btn-link {
+    display: inline-block;
+    background: #2bb0d4;
+    text-align: center;
+    border-radius: 19px;
+    color: #ffffff;
+    margin-top: 10px;
+    min-height: 38px;
+    line-height: 22px;
+    padding: 6px 12px;
+    font-weight: 300;
+}
+.keyword .btn-link:hover{
+    text-decoration: none;
+}
+
+
+
+.keyword .recommend {
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px dashed #2bb0d4;
+}
+
+.choose_word {
+    height: 26px;
+    margin-top: 2px;
+    padding: 9px 40px 0 ;
+    background: #f4f4f4;
+    font-size: 11px;
+    border-top: 1px solid #d7d7d7;
+}
+
+.choose_word a {
+    color: #959595;
+    *display: inline-block;
+}
+
+:root .choose_word a {
+    display: inline-block;
+}
+
+.choose_word a.selected, .choose_word a:hover {
+    color: #666666;
+    text-decoration: underline;
+}
 
 .write-form #favor_word {
     position: absolute;
@@ -672,5 +791,22 @@ ul.bots li a span.movie {
 }
 
 
+/* Chrome, Safari용 스크롤 바 */
+::-webkit-scrollbar {
+    width: 9px;
+    height: 8px;
+    border: 3px solid #fff;s
+}
 
 
+::-webkit-scrollbar-track {
+    background: #efefef;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 50px;
+    width: 50px;
+    background: rgba(0, 0, 0, .2);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}

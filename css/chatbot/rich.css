@@ -160,6 +160,77 @@
     color: #b7cee0;
 }
 
+
+.bubble .btn-inline {
+    display: inline-block;
+    min-width: auto;
+    width: auto;
+
+}
+.bubble .list {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c7e8d6;
+}
+
+.bubble .file {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.bubble .file li{
+    line-height: 18px;
+    font-size: 12px;
+    color: #00a1e5;
+    margin-bottom: 6px;
+}
+.bubble .file li .btn-file {
+    line-height: 18px;
+    font-size: 10px;
+    color: #ffffff;
+    padding: 0 10px;
+    border-radius: 4px;
+    background-color: #00a1e5;
+    display: inline-block;
+    margin-left: 10px;
+}
+.bubble .step li{
+    height: 30px;
+    border-radius: 15px;
+    background-color: #00a0e4;
+    margin-bottom: 10px;
+}
+.bubble .step li.selected{
+    background-color: #013b7a;
+}
+.bubble .step li .btn{
+    line-height: 28px;
+    display: block;
+    color: #ffffff;
+    padding: 0 20px;
+    text-align: left;
+    display: block;
+    width: 400px;
+}
+
+
+
+
+
+
+.bubble .btn-collapse {
+    display: block;
+    text-align: center;
+    background-color: #e2fcee;
+    margin: -7px -20px;
+    height: 30px;
+    padding-top: 3px;
+    border-bottom-left-radius : 20px;
+    border-bottom-right-radius : 20px;
+}
+
+
+
+
 /*.bubble .btn-link2 { margin-top: 5px;}*/
 
 /* 2018.10.12 added */

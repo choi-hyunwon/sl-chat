@@ -32,15 +32,15 @@ var chat = {
     speechErrorMessage : "Speech synthesis can't be play.",
     ajaxCall : function(url, data) {
     	console.log(url, data);
-		return $.ajax({
-			'type' : 'POST',
-			'url' : url,
-			'headers' : {
-				'Accept' : 'application/json',
-				'Content-Type' : 'application/json'
-			},
-			'data' : JSON.stringify(data),
-		});
+		// return $.ajax({
+		// 	'type' : 'POST',
+		// 	'url' : url,
+		// 	'headers' : {
+		// 		'Accept' : 'application/json',
+		// 		'Content-Type' : 'application/json'
+		// 	},
+		// 	'data' : JSON.stringify(data),
+		// });
     },
     /*
     // if jsonp
@@ -70,11 +70,11 @@ var chat = {
         this.$textarea = $("#chat-textarea");
     },
     cacheTemplate : function() {
-    	this.loadingTmpl = $.getTemplateStr("message-loading");
-    	this.questionTmpl = $.getTemplateStr("user-message");
-    	this.answerTmpl = $.getTemplateStr("bot-message");
-    	this.dialogTmpl = $.registTemplateStr("dialogTmpl", "dialog-response");
-    	$.registTemplateStr("carouselTmpl", "carousel-response");
+    	// this.loadingTmpl = $.getTemplateStr("message-loading");
+    	// this.questionTmpl = $.getTemplateStr("user-message");
+    	// this.answerTmpl = $.getTemplateStr("bot-message");
+    	// this.dialogTmpl = $.registTemplateStr("dialogTmpl", "dialog-response");
+    	// $.registTemplateStr("carouselTmpl", "carousel-response");
     },
     bindEvents: function() {
 	   var self = this;
