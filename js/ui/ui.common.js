@@ -29,4 +29,38 @@ $(function () {
         }
 
     })
+
+    var mySwiper = null;
+    function sliderInit() {
+        mySwiper = new Swiper ('.swiper-container', {
+            // Optional parameters
+            loop: false,
+            spaceBetween : 20
+        })
+        $('.button-prev').on('click', function () {
+            mySwiper.slidePrev();
+        })
+        $('.button-next').on('click', function () {
+            mySwiper.slideNext();
+        })
+    }
+
+
+    $('.popup_wrap .close').on('click', function () {
+        $('.popup_wrap').hide();
+    });
+    $('._help').on('click', function () {
+        $('.popup_wrap._popup_help').show();
+        if(mySwiper == null) {
+            sliderInit();
+        }
+    });
+    $('._setting').on('click', function () {
+        $('.popup_wrap._popup_setting').show();
+    });
+
+
+
+
+
 });
