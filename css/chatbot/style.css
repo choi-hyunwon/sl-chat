@@ -31,11 +31,47 @@ html, body {
 .chat-container .chat-wrap {
     background: #fff;
     height: 100%;
+    position: relative;
 }
 
 .chat-container .chat-wrap .chat {
     height: 100%;
+    margin-left: 50px;
 }
+.chat-container .chat-wrap .utility {
+    height: 100%;
+    width: 46px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border: 1px solid #D5D5D5;
+    text-align: center;
+}
+
+.chat-container .chat-wrap .utility .etc {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+    padding-top: 10px;
+}
+.chat-container .chat-wrap .utility .etc::before {
+    content: '';
+    border-top: 1px solid #D5D5D5;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 10%;
+}
+.chat-container .chat-wrap .utility .favor {
+    font-size: 24px;
+    color: #1191cd;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
 
 /* only chat window */
 
@@ -306,7 +342,7 @@ ul.bots li a span.movie {
     font-weight: 300;
     padding: 7px 20px;
     position: relative;
-    max-width: 440px;
+    max-width: 390px;
     line-height: 1.4;
     word-wrap: break-word;
 }
@@ -359,7 +395,7 @@ ul.bots li a span.movie {
 .message li.bot .util {
     float: left;
     margin: 0 0 20px 49px;
-    width: 440px;
+    width: 390px;
     height: 50px;
     box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.16);
     border: solid 2px #2bb0d4;
@@ -371,7 +407,7 @@ ul.bots li a span.movie {
     padding: 8px 0;
 }
 .message li.bot .util .btn {
-    width: 100px;
+    width: 90px;
     height: 30px;
     border-radius: 20px;
     line-height: 16px;
@@ -387,7 +423,7 @@ ul.bots li a span.movie {
     border: none;
 }
 .message li.bot .util.util-3 .btn {
-    width: 133px;
+    width: 120px;
 }
 
 
@@ -795,7 +831,7 @@ ul.bots li a span.movie {
 
 
 
-/* 도움말 팝업 */
+/* 공통 팝업 및 설정 도움말 */
 
 .popup_wrap {
     position: absolute;
@@ -833,16 +869,88 @@ ul.bots li a span.movie {
 .popup_wrap .popup .popup_body .title{
     font-size: 20px;
 }
+.popup_wrap .popup .slider {
+    position: relative;
+}
+.popup_wrap .popup .slider .button-next,
+.popup_wrap .popup .slider .button-prev {
+    font-size: 36px;
+    line-height: 1.31;
+    letter-spacing: -1.8px;
+    text-align: center;
+    color: #999999;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup_wrap .popup .slider .button-next {
+    right: 0px;
+}
 
 
 
 
+.popup_wrap .popup .close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+.popup_wrap .popup .close:hover {
+    opacity: 1;
+}
+.popup_wrap .popup .close:before, .popup_wrap .popup .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 20px;
+    width: 1px;
+    background-color: #ffffff;
+}
+.popup_wrap .popup .close:before {
+    transform: rotate(45deg);
+}
+.popup_wrap .popup .close:after {
+    transform: rotate(-45deg);
+}
 
 
 
-
-
-
+.popup_wrap .popup .logo {
+    padding-top: 10px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.popup_wrap .popup .logo img {
+    margin-bottom: 10px;
+}
+.popup_wrap .popup .logo p {
+    font-size: 18px;
+    line-height: 1.44;
+    color: #333333;
+}
+.popup_wrap .popup .btn_wrap {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+.popup_wrap .popup .btn_wrap a{
+    height: 30px;
+    border-radius: 20px;
+    background-color: #00a0e4;
+    display: block;
+    color: #fff;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.popup_wrap .popup .btn_wrap a,
+.popup_wrap .popup .btn_wrap a:hover,
+.popup_wrap .popup .btn_wrap a:active{
+    text-decoration: none;
+}
 
 
 
