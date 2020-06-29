@@ -15,7 +15,7 @@ html, body {
 -------------------------------------------*/
 .chat-container .head {
     background-color: #151c5a;
-    background-image: linear-gradient(to right, #00a1e5, #065590 69%, #003777);
+    background-image: linear-gradient(to right, #151c5a, #019ade 82%, #00a1e5);
     height: 70px;
     position: relative;
 }
@@ -571,19 +571,6 @@ ul.bots li a span.movie {
     font-family: 'Nanum Gothic', "맑은 고딕", "돋움", "Malgun Gothic", arial, sans-serif;
     font-size: 15px;
 }
-
-#chat-textarea::-moz-input-placeholder {
-    color: #adadad;
-    font-family: 'Nanum Gothic', "맑은 고딕", "돋움", "Malgun Gothic", arial, sans-serif;
-    font-size: 15px;
-}
-
-#chat-textarea:-moz-input-placeholder {
-    color: #adadad;
-    font-family: 'Nanum Gothic', "맑은 고딕", "돋움", "Malgun Gothic", arial, sans-serif;
-    font-size: 15px;
-}
-
 #chat-textarea:-ms-input-placeholder {
     color: #adadad;
     font-family: 'Nanum Gothic', "맑은 고딕", "돋움", "Malgun Gothic", arial, sans-serif;
@@ -591,14 +578,6 @@ ul.bots li a span.movie {
 }
 
 #chat-textarea:focus::-webkit-input-placeholder {
-    color: transparent;
-}
-
-#chat-textarea:focus::-moz-input-placeholder {
-    color: transparent;
-}
-
-#chat-textarea:focus:-moz-input-placeholder {
     color: transparent;
 }
 
@@ -795,7 +774,7 @@ ul.bots li a span.movie {
 ::-webkit-scrollbar {
     width: 9px;
     height: 8px;
-    border: 3px solid #fff;s
+    border: 3px solid #fff;
 }
 
 
@@ -810,3 +789,63 @@ ul.bots li a span.movie {
     -webkit-border-radius: 8px;
     border-radius: 8px;
 }
+
+
+
+
+
+
+/* 도움말 팝업 */
+
+.popup_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+.popup_wrap .popup {
+    width: 530px;
+    min-height: 300px;
+    background-color: #fff;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.popup_wrap .popup .popup_head {
+    height: 40px;
+    background-color: #0070af;
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 40px;
+    padding-left: 10px  ;
+}
+
+.popup_wrap .popup .popup_body {
+    padding: 30px;
+    font-size: 16px;
+    color: #333333;
+}
+.popup_wrap .popup .popup_body .title{
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,15 +7,13 @@ $(function () {
             $('#system_layout').css({'width': 'calc(100% - 600px)', 'left':'600px'});
             myLayout.updateSize($(window).width()-600, $(window).height());
             $(this).css('transform','translateX(-50%) translateY(-50%) rotate(0deg)')
-            $('#header_system .h1').hide();
         } else {
             $('#chatbot').hide();
             $(this).addClass('collapsed');
             $('#toggler').css({'left': '0'});
             $('#system_layout').css({'width': '100%', 'left':'20px'});
             myLayout.updateSize($(window).width()-20, $(window).height());
-            $(this).css('transform','translateX(-50%) translateY(-50%) rotate(180deg)');
-            $('#header_system .h1').show();
+            $(this).css('transform','translateX(-50%) translateY(-50%) rotate(180deg)')
         }
     })
 

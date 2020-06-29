@@ -18,6 +18,7 @@
   "homepage": "https://github.com/choi-hyunwon/sl-chat#readme",
   "dependencies": {
     "golden-layout": "^1.5.9",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "swiper": "^5.4.5"
   }
 }
