@@ -394,10 +394,10 @@ ul.bots li a span.movie {
 
 .message li.bot .util {
     float: left;
-    margin: 0 0 20px 49px;
-    width: 390px;
+    /*margin: 0 0 20px 49px;*/
+    width: 100%;
     height: 50px;
-    box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.16);
+    /*box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.16);*/
     border: solid 2px #2bb0d4;
     background-color: #ffffff;
     text-align: center;
@@ -407,10 +407,12 @@ ul.bots li a span.movie {
     padding: 8px 0;
 }
 .message li.bot .util .btn {
-    width: 90px;
+    width: 23%;
     height: 30px;
     border-radius: 20px;
     line-height: 16px;
+    letter-spacing: -1.5px;
+    font-size: 12px;
 }
 .message li.bot .util .btn-outline-white {
     background-color: #fff;
@@ -423,10 +425,12 @@ ul.bots li a span.movie {
     border: none;
 }
 .message li.bot .util.util-3 .btn {
-    width: 120px;
+    width: 31%;
 }
 
-
+.message li.bot .util.util-2 .btn {
+    width: 48%;
+}
 
 
 

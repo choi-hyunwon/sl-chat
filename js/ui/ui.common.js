@@ -19,11 +19,11 @@ $(function () {
 
     $('._collapse').on('click', function () {
         if (!$(this).hasClass('open')) {
-            $(this).siblings('.body').find('.list').show(500);
+            $(this).siblings('.item').find('.list').show(500);
             $(this).addClass('open')
                 .find('i').attr('class', 'fal fa-chevron-up');
         } else {
-            $(this).siblings('.body').find('.list:gt(2)').hide(500);
+            $(this).siblings('.item').find('.list:gt(2)').hide(500);
             $(this).removeClass('open')
                 .find('i').attr('class', 'fal fa-chevron-down');
         }
