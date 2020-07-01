@@ -45,7 +45,7 @@ input[type="radio"] {margin:0;padding:0;vertical-align:middle}
 input[type="radio"] + label {margin-left:3px}
 label + input[type="radio"] {margin-left:10px}
 /* checkbox */
-input[type="checkbox"] {margin:0;padding:0;vertical-align:middle; -webkit-appearance: none; width: 18px; height:18px;background-color: #fff; border: #666 solid 2px;position: relative;}
+input[type="checkbox"] {margin:0;padding:0;vertical-align:middle; -webkit-appearance: none; width: 18px; height:18px;background-color: #fff; border: #515151 solid 2px; border-radius:2px; position: relative;}
 input[type="checkbox"]:checked {background: #00A1E5; border-color: #00A1E5;}
 input[type="checkbox"]:checked::after {position: absolute;
     top: 2px;

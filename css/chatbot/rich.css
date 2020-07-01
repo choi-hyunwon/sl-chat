@@ -224,6 +224,9 @@
     margin-bottom: 10px;
     height: 30px;
     padding-top: 3px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
 }
 
 

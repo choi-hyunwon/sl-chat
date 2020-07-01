@@ -94,7 +94,7 @@
 									<div class="item active">
 										<p>activity 시나리오 진입</p>
 										<button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계 단계 ACTIVITY', 'iframe')">설계 단계 ACTIVITY</button>
-										<button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계표준', 'ajax')">설계표준</button>
+										<button type="button" class="btn-link ellipsis" onclick="myLayout.addMenuItem('설계표준', 'iframe2')">설계표준</button>
 									</div>
 								</div>
 							</div>
@@ -379,12 +379,11 @@
 						</div>
 						
 						<div class="btn_wrap">
+							<a href="#">배경색, 폰트, 글꼴 변경</a>
 							<a href="#">대화내용 모두 지우기</a>
 							<a href="#">대화내용 모두 보기</a>
 							<a href="#">고정 질문(메시지) 설정</a>
 						</div>
-					
-					
 					</div>
 				</div>
 			</div>
@@ -402,7 +401,6 @@
 			<div class="util">
 				<a href="#" class="btn_row active"></a>
 				<a href="#" class="btn_col"></a>
-				<a href="#" class="btn_grid"></a>
 			</div>
 		</div>
 		<div id="container_system"></div>
@@ -417,12 +415,9 @@
         myLayout.registerComponent('iframe', function (container, state) {
             container.getElement().html('<iframe src="demo/legacy/search/AType_01.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>');
         });
-
-        $.get('demo/legacy/search/AType_01_body.html', function (data, status) {
-            myLayout.registerComponent('ajax', function (container, state) {
-                container.getElement().html(data);
-            });
-        })
+		myLayout.registerComponent('iframe2', function (container, state) {
+			container.getElement().html('<iframe src="demo/legacy/search/EType_01.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>');
+		});
 
 
     })

@@ -167,7 +167,7 @@ i.ico_help {background-position:0 0}
 .filter_wrap table + table.line tbody tr:first-child th, .filter_wrap table + table.line tbody tr:first-child td {padding-top:10px}
 .filter_wrap .keyword_input {display:inline-block;width:255px;height:28px;background-color:#fff;border:1px solid #d5d5d5;border-radius:2px;-webkit-border-radius:2px}
 .filter_wrap .keyword_input input[type='text'] {width:219px;height:28px;line-height:28px;padding-left:5px;background-color:transparent;border:none}
-.filter_wrap .keyword_input button {margin:-1px -1px -1px 0}
+.filter_wrap .keyword_input button {margin:1px 0 }
 .filter_wrap .keyword_input * {vertical-align:top}
 .filter_wrap .keyword_input.narrow {width:175px}
 .filter_wrap .keyword_input.narrow input[type='text'] {width:139px}
@@ -175,7 +175,7 @@ i.ico_help {background-position:0 0}
 .filter_chk label {margin-right:15px;color:#444;letter-spacing:-1px}
 .filter_wrap .period_wrap {position:absolute;right:0;top:9px;height:30px;margin-top:0}
 .filter_wrap .period_input {width:118px;height:28px;background-color:#fff;border:1px solid #d5d5d5;border-radius:2px;-webkit-border-radius:2px}
-.filter_wrap .period_input input[type='text'] {width:81px;height:28px;line-height:28px;padding-left:5px;background-color:transparent;border:none;color:#9da1a9;font-size:11px}
+.filter_wrap .period_input input[type='text'] {width:86px;height:28px;line-height:28px;padding-left:5px;background-color:transparent;border:none;color:#9da1a9;font-size:11px}
 .filter_wrap .period_input .ui-datepicker-trigger {margin-top:0;*margin-top:-2px}
 .filter_wrap .period_input > * {vertical-align:middle}
 .filter_wrap .period_input.narrow {width:98px}
@@ -331,7 +331,7 @@ button.btn_excel > span {display:inline-block;height:23px;line-height:21px;color
 /* 추가부분  */
 .flex_layout select {width: 150px;height:30px;line-height:30px;border:1px solid #d5d5d5;border-radius:2px;-webkit-border-radius:2px}
 .flex_layout .keyword_input { vertical-align:middle; width: 200px;}
-.flex_layout .keyword_input > input[type='text'] {width: 164px;}
+.flex_layout .keyword_input > input[type='text'] {width: 168px;}
 .flex_layout .b_select {display: inline-block; margin-right: 50px;}
 .flex_layout .b_check {display: inline-block; margin-right: 50px;}
 .flex_layout .b_input {display: inline-block; margin-right: 20px;}
@@ -377,8 +377,8 @@ button.btn_excel > span {display:inline-block;height:23px;line-height:21px;color
     z-index: 2;
     color: #fff;
     text-decoration: none;
-    background-color: #04bcde;
-    border-color: #04bcde
+    background-color: #0070AF;
+    border-color: #0070AF
 }
 
 .page-link:hover.page-arrow {
@@ -427,8 +427,8 @@ button.btn_excel > span {display:inline-block;height:23px;line-height:21px;color
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #04bcde;
-    border-color: #04bcde
+    background-color: #0070AF;
+    border-color: #0070AF
 }
 
 .page-item.disabled .page-link {

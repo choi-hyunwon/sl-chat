@@ -11,7 +11,7 @@ $(function () {
             $('#chatbot').hide();
             $(this).addClass('collapsed');
             $('#toggler').css({'left': '0'});
-            $('#system_layout').css({'width': '100%', 'left':'20px'});
+            $('#system_layout').css({'width': 'calc(100% - 20px)', 'left':'20px'});
             myLayout.updateSize($(window).width()-20, $(window).height());
             $(this).css('transform','translateX(-50%) translateY(-50%) rotate(180deg)')
         }

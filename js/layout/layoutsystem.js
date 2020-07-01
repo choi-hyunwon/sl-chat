@@ -24,4 +24,54 @@ myLayout.addMenuItem = function (title, id) {
 //     container.find('.lm_content').text('hello!');
 // })
 
+myLayout.grid = function() {
+    var oldElement = myLayout.root.contentItems[ 0 ],
+        newElement = myLayout.createContentItem({
+            type: 'column',
+            content: [{
+                type:'row',
+                content: []
+            },{
+                type:'row',
+                content: []
+            }]
+        }),
+        i;
+    var stacks = oldElement.getItemsByType( 'stack' );
+    var rows = newElement.getItemsByType( 'row' );
+    myLayout.root.replaceChild( oldElement, newElement );
 
+    rows[ 0 ].addChild( stacks[ 0 ] );
+    rows[ 0 ].addChild( stacks[ 1 ] );
+    rows[ 1 ].addChild( stacks[ 2 ] );
+    rows[ 1 ].addChild( stacks[ 3 ] );
+};
+
+myLayout.toggleRowCol = function() {
+    var oldElement = myLayout.root.contentItems[ 0 ],
+        newElement = myLayout.createContentItem({
+            type: oldElement.isRow ? 'column' : 'row',
+            content: []
+        }),
+        i;
+    newElement.isInitialised = true;
+    for( i = 0; i < oldElement.contentItems.length; i++ ) {
+        newElement.addChild( oldElement.contentItems[ i ] );
+    }
+    myLayout.root.replaceChild( oldElement, newElement );
+};
+
+$('.btn_row,.btn_col').on('click', function () {
+    if (!$(this).hasClass('active') ){
+        myLayout.toggleRowCol();
+        $(this).addClass('active')
+            .siblings().removeClass('active');
+    }
+});
+$('.btn_grid').on('click', function () {
+    if (!$(this).hasClass('active') ){
+        myLayout.grid();
+        $(this).addClass('active')
+            .siblings().removeClass('active');
+    }
+});
