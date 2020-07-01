@@ -9,14 +9,24 @@ var config = {
 var myLayout = new window.GoldenLayout(config, $('#container_system'));
 
 myLayout.addMenuItem = function (title, id) {
+    var aPanel = myLayout.root.contentItems[0].contentItems;
+    var nSize = aPanel.length;
     var newItemConfig = {
         title: title,
         type: 'component',
         componentName: id,
         componentState: {text: id}
     };
-    myLayout.root.contentItems[0].addChild(newItemConfig);
-
+    if( nSize < 3) {
+        for (i = 0; i < nSize; i++ ) {
+            if (myLayout.root.contentItems[0].contentItems[i].isMaximised) {
+                myLayout.root.contentItems[0].contentItems[i].toggleMaximise();
+            }
+        }
+        myLayout.root.contentItems[0].addChild(newItemConfig);
+    } else if (nSize === 3) {
+        myLayout.root.contentItems[0].contentItems[0].addChild(newItemConfig);
+    }
 };
 // myLayout.on( 'stackCreated', function( stack ){
 //     var container = stack.contentItems[0].element;
@@ -24,30 +34,8 @@ myLayout.addMenuItem = function (title, id) {
 //     container.find('.lm_content').text('hello!');
 // })
 
-myLayout.grid = function() {
-    var oldElement = myLayout.root.contentItems[ 0 ],
-        newElement = myLayout.createContentItem({
-            type: 'column',
-            content: [{
-                type:'row',
-                content: []
-            },{
-                type:'row',
-                content: []
-            }]
-        }),
-        i;
-    var stacks = oldElement.getItemsByType( 'stack' );
-    var rows = newElement.getItemsByType( 'row' );
-    myLayout.root.replaceChild( oldElement, newElement );
-
-    rows[ 0 ].addChild( stacks[ 0 ] );
-    rows[ 0 ].addChild( stacks[ 1 ] );
-    rows[ 1 ].addChild( stacks[ 2 ] );
-    rows[ 1 ].addChild( stacks[ 3 ] );
-};
-
 myLayout.toggleRowCol = function() {
+
     var oldElement = myLayout.root.contentItems[ 0 ],
         newElement = myLayout.createContentItem({
             type: oldElement.isRow ? 'column' : 'row',
