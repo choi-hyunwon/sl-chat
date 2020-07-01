@@ -20,8 +20,7 @@ myLayout.addMenuItem = function (title, id) {
     if( nSize < 3) {
         for (i = 0; i < nSize; i++ ) {
             if (myLayout.root.contentItems[0].contentItems[i].isMaximised) {
-                myLayout.root.contentItems[0].contentItems[i].toggleMaximise();
-            }
+                myLayout.root.contentItems[0].contentItems[i].toggleMaximise();}
         }
         myLayout.root.contentItems[0].addChild(newItemConfig);
     } else if (nSize === 3) {
