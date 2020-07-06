@@ -221,11 +221,12 @@
     display: block;
     text-align: center;
     background-color: #e2fcee;
-    margin: -7px -20px;
+    margin-bottom: 10px;
     height: 30px;
     padding-top: 3px;
-    border-bottom-left-radius : 20px;
-    border-bottom-right-radius : 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
 }
 
 

@@ -9,14 +9,23 @@ var config = {
 var myLayout = new window.GoldenLayout(config, $('#container_system'));
 
 myLayout.addMenuItem = function (title, id) {
+    var aPanel = myLayout.root.contentItems[0].contentItems;
+    var nSize = aPanel.length;
     var newItemConfig = {
         title: title,
         type: 'component',
         componentName: id,
         componentState: {text: id}
     };
-    myLayout.root.contentItems[0].addChild(newItemConfig);
-
+    if( nSize < 3) {
+        for (i = 0; i < nSize; i++ ) {
+            if (myLayout.root.contentItems[0].contentItems[i].isMaximised) {
+                myLayout.root.contentItems[0].contentItems[i].toggleMaximise();}
+        }
+        myLayout.root.contentItems[0].addChild(newItemConfig);
+    } else if (nSize === 3) {
+        myLayout.root.contentItems[0].contentItems[0].addChild(newItemConfig);
+    }
 };
 // myLayout.on( 'stackCreated', function( stack ){
 //     var container = stack.contentItems[0].element;
@@ -24,4 +33,32 @@ myLayout.addMenuItem = function (title, id) {
 //     container.find('.lm_content').text('hello!');
 // })
 
+myLayout.toggleRowCol = function() {
 
+    var oldElement = myLayout.root.contentItems[ 0 ],
+        newElement = myLayout.createContentItem({
+            type: oldElement.isRow ? 'column' : 'row',
+            content: []
+        }),
+        i;
+    newElement.isInitialised = true;
+    for( i = 0; i < oldElement.contentItems.length; i++ ) {
+        newElement.addChild( oldElement.contentItems[ i ] );
+    }
+    myLayout.root.replaceChild( oldElement, newElement );
+};
+
+$('.btn_row,.btn_col').on('click', function () {
+    if (!$(this).hasClass('active') ){
+        myLayout.toggleRowCol();
+        $(this).addClass('active')
+            .siblings().removeClass('active');
+    }
+});
+$('.btn_grid').on('click', function () {
+    if (!$(this).hasClass('active') ){
+        myLayout.grid();
+        $(this).addClass('active')
+            .siblings().removeClass('active');
+    }
+});
