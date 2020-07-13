@@ -10,10 +10,14 @@ var myLayout = new window.GoldenLayout(config, $('#container_system'));
 
 
 myLayout.on( 'stateChanged', function(a){
-    console.log('stateChanged');
-    console.log(a);
-    debugger
-
+    var p = a.origin.contentItems[0].parent;
+    // console.log(p)
+    for (i=0; i<p.contentItems.length; i++){
+        var h = p.contentItems[i].element.height();
+        // console.log(i)
+        // console.log(h)
+        p.contentItems[i].element.find('iframe').height(h-20);
+    }
 });
 
 myLayout.addMenuItem = function (title, id) {
