@@ -34,6 +34,10 @@ html, body {
     height: 100%;
     position: relative;
 }
+.chat-container .chat-wrap.addkeyword {
+    height: calc(100% - 253px);
+}
+
 
 .chat-container .chat-wrap .chat {
     height: 100%;
@@ -146,9 +150,8 @@ h1.h1 {
     font-size: 24px;
     font-weight: 300;
     color: #fff;
-    line-height: 70px;
+    line-height: 60px;
     margin: 0 20px;
-    float: left;
     display: inline-block;
     letter-spacing: -1.2px;
 }
@@ -612,7 +615,7 @@ ul.bots li a span.movie {
     top: 0;
     right: 0;
     width: 60px;
-    height: 70px;
+    height: 60px;
     background: #fff;
     padding: 20px 10px;
     border-radius: 10px;
@@ -722,11 +725,11 @@ ul.bots li a span.movie {
     background-color: #ffffff;
     z-index: 100;
     color: #cecece;
-    display: none;
     /*position: absolute;*/
     /*bottom: 70px;*/
     width: 100%;
     padding: 7px 0;
+    height: 253px;
 }
 .keyword ul {
     margin-bottom: 0;
@@ -784,7 +787,7 @@ ul.bots li a span.movie {
 }
 
 .choose_word {
-    height: 26px;
+    height: 36px;
     margin-top: 2px;
     padding: 9px 40px 0 ;
     background: #f4f4f4;

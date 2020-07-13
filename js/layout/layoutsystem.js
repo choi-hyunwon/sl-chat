@@ -8,6 +8,14 @@ var config = {
 };
 var myLayout = new window.GoldenLayout(config, $('#container_system'));
 
+
+myLayout.on( 'stateChanged', function(a){
+    console.log('stateChanged');
+    console.log(a);
+    debugger
+
+});
+
 myLayout.addMenuItem = function (title, id) {
     var aPanel = myLayout.root.contentItems[0].contentItems;
     var nSize = aPanel.length;

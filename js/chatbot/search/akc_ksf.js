@@ -81,6 +81,10 @@ function akcInit(doamin_num) {
 		if(container.has(e.target).length==0){
 			$('#'+AKCArwID_TOP).removeClass('active');
 			$('#topKeywordLst').hide();
+			/**
+			 * 키워드 패널 하단으로 이동
+			 */
+			$('.chat-wrap').removeClass('addkeyword');
 		}
 	});
 	
@@ -142,9 +146,11 @@ function akcInit(doamin_num) {
 						akc_lst = $('#topKeywordLst');		
 						akc_lst.children().first().html(wrtHelpMsg);
 						akc_lst.show();
+						$('.chat-wrap').addClass('addkeyword');
 					}else{
 						akc_lst = $('#topKeywordLst');		
 						akc_lst.hide();
+						$('.chat-wrap').removeClass('addkeyword');
 					}
 					break;
 				case "first_opt_top" :	// 첫단어 보기 클릭시
