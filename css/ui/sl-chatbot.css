@@ -23,7 +23,7 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    background: #222;
+    background: #ffffff;
 }
 #toggler {
     position: absolute;
@@ -33,6 +33,7 @@ html, body {
     height: 100%;
     background-color: #009fe3;
     z-index: 100;
+    border-radius: 0 20px 0 0 ;
 }
 #toggler .btn_collapse {
     position: absolute;
@@ -60,11 +61,11 @@ html, body {
     position: absolute;
     top: 0;
     left: 600px;
-    box-shadow: -3px 0px 9px 0px rgba(0, 0, 0, 0.4);
 }
 #header_system {
     height: 70px;
     background-color: #067cbf;
+    border-radius: 20px 20px 0 0;
 }
 #header_system .util {
     position: absolute;

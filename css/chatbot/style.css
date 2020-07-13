@@ -18,6 +18,7 @@ html, body {
     background-image: linear-gradient(to right, #151c5a, #019ade 82%, #00a1e5);
     height: 70px;
     position: relative;
+    border-radius: 20px 0 0 0px ;
 }
 
 .chat-container .head .modal-title {
@@ -29,7 +30,7 @@ html, body {
 }
 
 .chat-container .chat-wrap {
-    background: #fff;
+    background: #ededed;
     height: 100%;
     position: relative;
 }
@@ -39,14 +40,40 @@ html, body {
     margin-left: 50px;
 }
 .chat-container .chat-wrap .utility {
-    height: 100%;
+    height: calc( 100% - 4px);
     width: 46px;
     position: absolute;
     top: 2px;
     left: 2px;
     border: 1px solid #D5D5D5;
+    background-color: #fff;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.chat-container .chat-wrap .toolbar {
+    width: 46px;
+    text-align: center;
+    padding-top: 20px;
+}
+.chat-container .chat-wrap .toolbar li {
+    margin-bottom: 20px;
+
+}
+.chat-container .chat-wrap .toolbar a {
+    display: block;
+    font-size: 12px;
+    color: #949494;
+}
+.chat-container .chat-wrap .toolbar a:hover {
+    text-decoration: none;
+}
+.chat-container .chat-wrap .toolbar span {
+    display: block;
     text-align: center;
 }
+
 
 .chat-container .chat-wrap .utility .etc {
     position: absolute;
@@ -308,12 +335,12 @@ ul.bots li a span.movie {
 /* chat-wrap
 -------------------------------------------*/
 .chat-wrap .chat {
-    padding: 30px 15px 10px 20px;
+    padding: 30px 15px 10px 10px;
     overflow-x: hidden;
     overflow-y: auto;
     min-height: 400px;
     box-sizing: border-box;
-    background: #ffffff;
+    /*background: #ededed;*/
     height: calc(100vh - 200px);
 }
 
@@ -342,7 +369,7 @@ ul.bots li a span.movie {
     font-weight: 300;
     padding: 7px 20px;
     position: relative;
-    max-width: 390px;
+    max-width: 440px;
     line-height: 1.4;
     word-wrap: break-word;
 }
@@ -372,7 +399,7 @@ ul.bots li a span.movie {
 }
 
 .message li.bot .bubble {
-    margin: 0 0 20px 49px;
+    margin: 0 0 20px 0px;
     border: solid 1px #c7e8d6;
     background-color: #f6fffa;
     float: left;
@@ -486,13 +513,13 @@ ul.bots li a span.movie {
 }
 
 .message li.user .bubble {
-    border: solid 2px #c9e9f4;
+    border: solid 2px #28424a;
     float: right;
-    margin-right: 50px;
+    /*margin-right: 50px;*/
     margin-bottom: 20px;
     border-top-right-radius: 0;
-    color: #333333;
-    background-color: #e6f9ff;
+    color: #ffffff;
+    background-color: #3a555e;
 }
 
 .message li.user .bubble .b-tail {
@@ -696,8 +723,8 @@ ul.bots li a span.movie {
     z-index: 100;
     color: #cecece;
     display: none;
-    position: absolute;
-    bottom: 70px;
+    /*position: absolute;*/
+    /*bottom: 70px;*/
     width: 100%;
     padding: 7px 0;
 }
