@@ -15,7 +15,7 @@ myLayout.on( 'stateChanged', function(a){
     for (i=0; i<p.contentItems.length; i++){
         var h = p.contentItems[i].element.height();
         // console.log(i)
-        // console.log(h)
+        console.log(h)
         p.contentItems[i].element.find('iframe').height(h-20);
     }
 });

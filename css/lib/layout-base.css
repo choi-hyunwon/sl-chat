@@ -309,7 +309,7 @@
 /*# sourceMappingURL=goldenlayout-base.css.map */
 .lm_goldenlayout {
     background: #ffffff url("../../images/logo.png") center center no-repeat;
-    height: 100% !important;
+    /*height: 100% !important;*/
 }
 
 .lm_content {

@@ -84,7 +84,7 @@ function akcInit(doamin_num) {
 			/**
 			 * 키워드 패널 하단으로 이동
 			 */
-			$('.chat-wrap').removeClass('addkeyword');
+			keywordClose();
 		}
 	});
 	
@@ -146,11 +146,11 @@ function akcInit(doamin_num) {
 						akc_lst = $('#topKeywordLst');		
 						akc_lst.children().first().html(wrtHelpMsg);
 						akc_lst.show();
-						$('.chat-wrap').addClass('addkeyword');
+						keywordOpen();
 					}else{
 						akc_lst = $('#topKeywordLst');		
 						akc_lst.hide();
-						$('.chat-wrap').removeClass('addkeyword');
+						keywordClose();
 					}
 					break;
 				case "first_opt_top" :	// 첫단어 보기 클릭시
@@ -378,4 +378,16 @@ function selectOpt( id ){
 	}else if(id.indexOf("last_opt") > -1){ // 끝단어 보기 선택 시
 		akc_opt = 'e';
 	}
+}
+
+/**
+ * 자동완성 기능
+ */
+
+function keywordOpen() {
+	$('.chat-wrap').addClass('addkeyword');
+	$('.chat').scrollTop($('.chat').scrollTop()+253);
+}
+function keywordClose() {
+	$('.chat-wrap').removeClass('addkeyword');
 }
