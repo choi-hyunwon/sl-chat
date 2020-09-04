@@ -27,7 +27,7 @@ myLayout.on( 'stateChanged', function(a) {
 myLayout.addMenuItem = function (title, id) {
     if (myLayout.root.contentItems.length === 0) {
         var parentItemConfig = {
-            type: 'column',
+            type: $('.btn_row').hasClass('active') ? 'column' : 'row',
             content: []
         };
         myLayout.root.addChild(parentItemConfig);

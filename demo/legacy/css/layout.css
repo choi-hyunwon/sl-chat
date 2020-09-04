@@ -289,7 +289,8 @@ button.btn_excel > span {display:inline-block;height:23px;line-height:21px;color
 .result_table table thead th:first-child, .result_table table tbody td:first-child {border-left:none}
 .result_table table tbody tr.gray td {background-color:#f8f8f8}
 .result_table table tbody tr:hover td {background-color:#E6F9FF}
-.scroll-x {overflow:hidden;overflow-x:auto}
+.scroll-x {overflow-x:auto}
+.scroll-y {overflow-y:auto}
 /* paging */
 .paging {height:32px;margin-top:20px}
 .paging .paging_wrap {text-align:center;white-space:nowrap}
